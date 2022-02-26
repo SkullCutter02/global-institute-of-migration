@@ -1,12 +1,18 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
+
+import MainArticlePreview from "../components/ui/home/MainArticlePreview";
+import RecentArticlesPreview from "../components/ui/home/RecentArticlesPreview";
 
 const HomePage: React.FC = () => {
   return (
     <>
-      <Text fontFamily={"Solido-Medium"} color={"primary"}>
-        Hello World
-      </Text>
+      <Box as={"main"} py={16} px={10}>
+        <Flex>
+          <MainArticlePreview />
+          <RecentArticlesPreview />
+        </Flex>
+      </Box>
     </>
   );
 };
