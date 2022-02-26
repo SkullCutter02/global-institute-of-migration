@@ -7,7 +7,14 @@ import ArticleDescriptionText from "./ArticleDescriptionText";
 const MainArticlePreview: React.FC = () => {
   return (
     <>
-      <Box w={"100%"} pr={10} pb={16} borderRight={"3px solid"} borderColor={"gray.300"}>
+      <Box
+        w={"100%"}
+        pr={{ base: 0, md: 10 }}
+        pb={16}
+        borderRight={{ base: "none", md: "3px solid" }}
+        borderBottom={{ base: "3px solid", md: "none" }}
+        borderColor={{ base: "gray.300", md: "gray.300" }}
+      >
         <Image src={"/placeholder.png"} w={"100%"} />
         <ArticlePreviewInformation />
         <Heading cursor={"pointer"} mb={3}>

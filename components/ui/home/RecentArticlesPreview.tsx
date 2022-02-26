@@ -6,7 +6,14 @@ import ArticleDescriptionText from "./ArticleDescriptionText";
 const RecentArticlesPreview: React.FC = () => {
   return (
     <>
-      <VStack w={"450px"} as={"aside"} pl={10} spacing={7}>
+      <VStack
+        w={{ base: "100%", md: "400px", xl: "450px" }}
+        as={"aside"}
+        pl={{ base: 0, md: 10 }}
+        pt={{ base: 16, md: 0 }}
+        spacing={7}
+      >
+        <Heading fontSize={28}>Recent Articles</Heading>
         <Box>
           <Image src={"/placeholder.png"} w={"100%"} />
           <ArticlePreviewInformation />
