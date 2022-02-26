@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 
+import Navbar from "../components/layout/navbar/Navbar";
 import theme from "../theme/theme";
 
 // import "../styles/global.css";
@@ -16,9 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <Head>
-          <title>My Website</title>
+          <title>The Global Institute of Migration</title>
+          <link rel="shortcut icon" href={"/logo.png"} />
         </Head>
         <ChakraProvider theme={theme}>
+          <Navbar />
           <Component {...pageProps} />
         </ChakraProvider>
       </Hydrate>
