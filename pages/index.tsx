@@ -4,7 +4,9 @@ import { Text } from "@chakra-ui/react";
 const HomePage: React.FC = () => {
   return (
     <>
-      <Text color={"primary"}>Hello World</Text>
+      <Text fontFamily={"Solido-Medium"} color={"primary"}>
+        Hello World
+      </Text>
     </>
   );
 };
