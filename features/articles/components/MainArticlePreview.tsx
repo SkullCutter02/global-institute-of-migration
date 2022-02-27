@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Heading, Image, Text } from "@chakra-ui/react";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
-import PreviewDescription from "../../../components/elements/PreviewDescription";
 
 const MainArticlePreview: React.FC = () => {
   return (
@@ -17,13 +16,13 @@ const MainArticlePreview: React.FC = () => {
       >
         <Image src={"/placeholder.png"} w={"100%"} />
         <ArticlePreviewInformation />
-        <Heading cursor={"pointer"} mb={3}>
+        <Heading as={"h1"} cursor={"pointer"} mb={3}>
           Ukraine In Danger
         </Heading>
-        <PreviewDescription fontSize={"large"}>
+        <Text textStyle={"large-description"}>
           Russia is Putin their army in Ukraine. Allies urge countries to sanction Russia. When will this
           madness end? At press time, wide Putin is seen in his natural habitat.
-        </PreviewDescription>
+        </Text>
       </Box>
     </>
   );

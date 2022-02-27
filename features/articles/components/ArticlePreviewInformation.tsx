@@ -5,12 +5,8 @@ const ArticlePreviewInformation: React.FC = () => {
   return (
     <>
       <Flex justifyContent={"space-between"} my={3}>
-        <Text fontFamily={"secondary"} fontSize={14} fontWeight={600} color={"gray.400"}>
-          Feb 11
-        </Text>
-        <Text fontFamily={"secondary"} fontSize={14} fontWeight={600} color={"gray.400"}>
-          Colin Chau
-        </Text>
+        <Text textStyle={"information"}>Feb 11</Text>
+        <Text textStyle={"information"}>Colin Chau</Text>
       </Flex>
     </>
   );

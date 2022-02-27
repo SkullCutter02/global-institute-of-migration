@@ -1,9 +1,7 @@
 import React from "react";
-import { Box, Heading, Image, VStack } from "@chakra-ui/react";
+import { Box, Heading, Image, VStack, Text } from "@chakra-ui/react";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
-import PreviewDescription from "../../../components/elements/PreviewDescription";
-import PreviewHeading from "../../../components/elements/PreviewHeading";
 
 const RecentArticlesPreview: React.FC = () => {
   return (
@@ -19,18 +17,22 @@ const RecentArticlesPreview: React.FC = () => {
         <Box>
           <Image src={"/placeholder.png"} w={"100%"} />
           <ArticlePreviewInformation />
-          <PreviewHeading>BREAKING: Kiley Listens To Sex Sounds</PreviewHeading>
-          <PreviewDescription fontSize={"small"}>
+          <Text as={"h2"} textStyle={"preview-heading"}>
+            BREAKING: Kiley Listens To Sex Sounds
+          </Text>
+          <Text textStyle={"small-description"}>
             Another unfortunate case of how horniness affects the average human being
-          </PreviewDescription>
+          </Text>
         </Box>
         <Box>
           <Image src={"/placeholder.png"} w={"100%"} />
           <ArticlePreviewInformation />
-          <PreviewHeading>BREAKING: Kiley Listens To Sex Sounds</PreviewHeading>
-          <PreviewDescription fontSize={"small"}>
+          <Text as={"h2"} textStyle={"preview-heading"}>
+            BREAKING: Kiley Listens To Sex Sounds
+          </Text>
+          <Text textStyle={"small-description"}>
             Another unfortunate case of how horniness affects the average human being
-          </PreviewDescription>
+          </Text>
         </Box>
       </VStack>
     </>
