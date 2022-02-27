@@ -17,6 +17,35 @@ const LatestVideosPreview: React.FC = () => {
             The sexually frustrated male hopes to find a new companion
           </Text>
         </Box>
+        <Box w={"100%"}>
+          <Image maxH={{ base: null, md: "250px" }} objectFit={"cover"} src={"/placeholder.png"} w={"100%"} />
+          <Text my={2} textStyle={"information"}>
+            Feb 11
+          </Text>
+          <Text textStyle={"preview-heading"}>
+            Jason Reconsiders His Sexuality As Jonathan Pins Him On Bed
+          </Text>
+          <Text textStyle={"large-description"}>
+            The sexually frustrated male hopes to find a new companion
+          </Text>
+        </Box>
+        <Box w={"100%"}>
+          <Image
+            maxH={{ base: null, md: "250px" }}
+            objectFit={"cover"}
+            src={"/placeholder2.png"}
+            w={"100%"}
+          />
+          <Text my={2} textStyle={"information"}>
+            Feb 11
+          </Text>
+          <Text textStyle={"preview-heading"}>
+            Jason Reconsiders His Sexuality As Jonathan Pins Him On Bed
+          </Text>
+          <Text textStyle={"large-description"}>
+            The sexually frustrated male hopes to find a new companion
+          </Text>
+        </Box>
       </SimpleGrid>
     </>
   );

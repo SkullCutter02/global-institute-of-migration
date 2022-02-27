@@ -1,21 +1,32 @@
-import React from "react";
-import { Center, HStack } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Flex } from "@chakra-ui/react";
 
-import NavbarText from "./NavbarText";
 import NavbarLogo from "./NavbarLogo";
+import NavbarLinks from "./NavbarLinks";
+import NavbarToggle from "./NavbarToggle";
 
 const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <Center color={"white"} as={"nav"} py={5} bg={"primary"} w={"100vw"} position={"relative"}>
-        <HStack spacing={16}>
-          <NavbarText>Home</NavbarText>
-          <NavbarText>Articles</NavbarText>
-          <NavbarText>Videos</NavbarText>
-          <NavbarText>About Us</NavbarText>
-        </HStack>
+      <Flex
+        color={"white"}
+        as={"nav"}
+        p={8}
+        bg={"primary"}
+        w={"100vw"}
+        justify={"space-between"}
+        wrap={"wrap"}
+        align={"center"}
+        maxH={{ base: isOpen ? "400px" : "100px", sm: isOpen ? "150px" : "100px", md: "max-content" }}
+        transition={{ base: "max-height 0.3s linear", sm: "max-height 0.2s linear", md: null }}
+        overflowY={"hidden"}
+      >
         <NavbarLogo />
-      </Center>
+        <NavbarToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+        <NavbarLinks />
+      </Flex>
     </>
   );
 };
