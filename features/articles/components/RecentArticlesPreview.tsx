@@ -2,8 +2,13 @@ import React from "react";
 import { Box, Heading, Image, VStack, Text } from "@chakra-ui/react";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
+import { useQuery } from "react-query";
+import getRecentArticles from "../api/getRecentArticles";
+import HOST from "../../../constants/host";
 
 const RecentArticlesPreview: React.FC = () => {
+  const { data: articles } = useQuery("recent-articles", () => getRecentArticles());
+
   return (
     <>
       <VStack
@@ -14,26 +19,16 @@ const RecentArticlesPreview: React.FC = () => {
         spacing={7}
       >
         <Heading fontSize={28}>Recent Articles</Heading>
-        <Box>
-          <Image src={"/placeholder.png"} w={"100%"} />
-          <ArticlePreviewInformation />
-          <Text as={"h2"} textStyle={"preview-heading"}>
-            BREAKING: Kiley Listens To Sex Sounds
-          </Text>
-          <Text textStyle={"small-description"}>
-            Another unfortunate case of how horniness affects the average human being
-          </Text>
-        </Box>
-        <Box>
-          <Image src={"/placeholder.png"} w={"100%"} />
-          <ArticlePreviewInformation />
-          <Text as={"h2"} textStyle={"preview-heading"}>
-            BREAKING: Kiley Listens To Sex Sounds
-          </Text>
-          <Text textStyle={"small-description"}>
-            Another unfortunate case of how horniness affects the average human being
-          </Text>
-        </Box>
+        {articles.slice(1).map((article) => (
+          <Box w={"100%"} key={article.id}>
+            <Image src={`${HOST}/assets/${article.main_article_image}`} w={"100%"} />
+            <ArticlePreviewInformation article={article} />
+            <Text as={"h2"} textStyle={"preview-heading"}>
+              {article.heading}
+            </Text>
+            <Text textStyle={"small-description"}>{article.subheading}</Text>
+          </Box>
+        ))}
       </VStack>
     </>
   );

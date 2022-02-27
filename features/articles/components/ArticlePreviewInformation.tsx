@@ -1,13 +1,23 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
+import { TypeOf } from "@directus/sdk";
 
-const ArticlePreviewInformation: React.FC = () => {
+import { DirectusCollections } from "../../../generated/directus";
+import formatMediaDate from "../../../utils/formatMediaDate";
+
+interface Props {
+  article: Partial<TypeOf<DirectusCollections, "articles">>;
+}
+
+const ArticlePreviewInformation: React.FC<Props> = ({ article }) => {
   return (
     <>
-      <Flex justifyContent={"space-between"} my={3}>
-        <Text textStyle={"information"}>Feb 11</Text>
-        <Text textStyle={"information"}>Colin Chau</Text>
-      </Flex>
+      {typeof article.author !== "string" && (
+        <Flex justifyContent={"space-between"} my={3}>
+          <Text textStyle={"information"}>{formatMediaDate(article.created_at)}</Text>
+          <Text textStyle={"information"}>{article.author.name}</Text>
+        </Flex>
+      )}
     </>
   );
 };

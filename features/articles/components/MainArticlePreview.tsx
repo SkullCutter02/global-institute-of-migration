@@ -1,9 +1,14 @@
 import React from "react";
 import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { useQuery } from "react-query";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
+import getRecentArticles from "../api/getRecentArticles";
+import HOST from "../../../constants/host";
 
 const MainArticlePreview: React.FC = () => {
+  const { data: articles } = useQuery("recent-articles", () => getRecentArticles());
+
   return (
     <>
       <Box
@@ -14,15 +19,12 @@ const MainArticlePreview: React.FC = () => {
         borderBottom={{ base: "3px solid", md: "none" }}
         borderColor={{ base: "gray.300", md: "gray.300" }}
       >
-        <Image src={"/placeholder.png"} w={"100%"} />
-        <ArticlePreviewInformation />
+        <Image src={`${HOST}/assets/${articles[0].main_article_image}`} w={"100%"} />
+        <ArticlePreviewInformation article={articles[0]} />
         <Heading as={"h1"} cursor={"pointer"} mb={3}>
-          Ukraine In Danger
+          {articles[0].heading}
         </Heading>
-        <Text textStyle={"large-description"}>
-          Russia is Putin their army in Ukraine. Allies urge countries to sanction Russia. When will this
-          madness end? At press time, wide Putin is seen in his natural habitat.
-        </Text>
+        <Text textStyle={"large-description"}>{articles[0].subheading}</Text>
       </Box>
     </>
   );
