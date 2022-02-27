@@ -8,6 +8,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "../components/layout/navbar/Navbar";
 import theme from "../theme/theme";
 
+import "@fontsource/saira-semi-condensed";
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 

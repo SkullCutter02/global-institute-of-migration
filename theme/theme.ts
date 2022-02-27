@@ -13,6 +13,7 @@ const theme = extendTheme({
   fonts: {
     heading: "Tiempos Headline, sans-serif",
     body: "Tiempos Headline, sans-serif",
+    secondary: "Saira Semi Condensed, sans-serif",
   },
 });
 

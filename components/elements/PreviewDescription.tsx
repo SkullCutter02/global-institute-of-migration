@@ -9,10 +9,10 @@ const PreviewDescription: React.FC<Props> = ({ children, fontSize }) => {
   return (
     <>
       <Text
-        fontFamily={"Solido-Medium"}
+        fontFamily={"secondary"}
         color={"gray.500"}
-        lineHeight={fontSize === "large" ? 1.5 : 1.2}
-        fontSize={{ base: fontSize === "large" ? 18 : 16, md: fontSize === "large" ? 18 : 14 }}
+        fontWeight={600}
+        fontSize={fontSize === "large" ? 18 : 16}
       >
         {children}
       </Text>

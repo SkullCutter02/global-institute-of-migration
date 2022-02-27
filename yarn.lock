@@ -739,6 +739,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@fontsource/saira-semi-condensed@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/saira-semi-condensed/-/saira-semi-condensed-4.5.2.tgz#93b554f9262b63e66941f3a58de78c8574221d4a"
+  integrity sha512-mUL0oS/InTOI9VQ7TdM6VKlasA0+9KzMiPxLF94/+mQN/7p5HNw5rbVIqemKbmivOpKrWPc/0eIvFogWZpV7Rw==
+
 "@next/env@12.0.8":
   version "12.0.8"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-12.0.8.tgz#a32ca0a97d464307f2e6ff106ce09b19aac108cf"

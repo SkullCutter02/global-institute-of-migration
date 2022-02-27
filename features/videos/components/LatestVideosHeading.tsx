@@ -12,10 +12,10 @@ const LatestVideosHeading: React.FC = () => {
         pb={4}
         pt={5}
       >
-        <Heading fontFamily={"Solido-ExtraBold"} color={"primary"}>
+        <Heading fontFamily={"secondary"} fontWeight={800} color={"primary"}>
           LATEST VIDEOS
         </Heading>
-        <Text fontSize={18} fontFamily={"Solido-ExtraBold"} cursor={"pointer"} color={"gray.500"}>
+        <Text fontSize={18} fontFamily={"secondary"} fontWeight={800} cursor={"pointer"} color={"gray.500"}>
           View All
         </Text>
       </Flex>
