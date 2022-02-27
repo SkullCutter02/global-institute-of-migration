@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1.7.4",
+    "@directus/sdk": "^9.5.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@fontsource/saira-semi-condensed": "^4.5.2",

@@ -4,3 +4,4 @@ yarn-error.log
 out
 .idea
 **/.DS_Store
+.env
