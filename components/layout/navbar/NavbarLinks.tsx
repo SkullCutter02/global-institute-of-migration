@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Stack } from "@chakra-ui/react";
 import NavbarText from "./NavbarText";
 
-const NavbarLinks: React.FC<Props> = () => {
+const NavbarLinks: React.FC = () => {
   return (
     <>
       <Box display={"block"} flexBasis={{ base: "100%", md: "auto" }}>
