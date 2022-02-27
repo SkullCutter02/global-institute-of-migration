@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Head from "next/head";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 
 import Navbar from "../components/layout/navbar/Navbar";
 import Footer from "../components/layout/footer/Footer";
@@ -26,8 +26,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property={"og:site_name"} content={"The Global Institute of Migration"} />
         </Head>
         <ChakraProvider theme={theme}>
-          <Navbar />
-          <Component {...pageProps} />
+          <Box minH={"100vh"}>
+            <Navbar />
+            <Component {...pageProps} />
+          </Box>
           <Footer />
         </ChakraProvider>
       </Hydrate>
