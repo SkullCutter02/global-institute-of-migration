@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Flex } from "@chakra-ui/react";
 
-import MainArticlePreview from "../components/ui/home/MainArticlePreview";
-import RecentArticlesPreview from "../components/ui/home/RecentArticlesPreview";
+import MainArticlePreview from "../features/articles/components/MainArticlePreview";
+import RecentArticlesPreview from "../features/articles/components/RecentArticlesPreview";
 
 const HomePage: React.FC = () => {
   return (

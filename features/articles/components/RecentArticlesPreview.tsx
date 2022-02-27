@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Heading, Image, VStack } from "@chakra-ui/react";
+
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
 import ArticleDescriptionText from "./ArticleDescriptionText";
 
