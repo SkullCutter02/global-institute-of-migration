@@ -13,10 +13,10 @@ const NavbarLinks: React.FC = () => {
           direction={["column", "row", "row", "row"]}
           pt={[8, 8, 0, 0]}
         >
-          <NavbarText>Home</NavbarText>
-          <NavbarText>Articles</NavbarText>
-          <NavbarText>Videos</NavbarText>
-          <NavbarText>About Us</NavbarText>
+          <NavbarText to={"/"}>Home</NavbarText>
+          <NavbarText to={"/articles?page=1"}>Articles</NavbarText>
+          <NavbarText to={"/videos?page=1"}>Videos</NavbarText>
+          <NavbarText to={"/about-us"}>About Us</NavbarText>
         </Stack>
       </Box>
     </>

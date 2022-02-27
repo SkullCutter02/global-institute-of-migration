@@ -1,12 +1,19 @@
 import React from "react";
 import { Text } from "@chakra-ui/react";
+import Link from "next/link";
 
-const NavbarText: React.FC = ({ children }) => {
+interface Props {
+  to: string;
+}
+
+const NavbarText: React.FC<Props> = ({ children, to: href }) => {
   return (
     <>
-      <Text cursor={"pointer"} fontSize={18}>
-        {children}
-      </Text>
+      <Link href={href}>
+        <Text cursor={"pointer"} fontSize={18}>
+          {children}
+        </Text>
+      </Link>
     </>
   );
 };
