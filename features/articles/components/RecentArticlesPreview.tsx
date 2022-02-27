@@ -2,7 +2,8 @@ import React from "react";
 import { Box, Heading, Image, VStack } from "@chakra-ui/react";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
-import ArticleDescriptionText from "./ArticleDescriptionText";
+import PreviewDescription from "../../../components/elements/PreviewDescription";
+import PreviewHeading from "../../../components/elements/PreviewHeading";
 
 const RecentArticlesPreview: React.FC = () => {
   return (
@@ -18,22 +19,18 @@ const RecentArticlesPreview: React.FC = () => {
         <Box>
           <Image src={"/placeholder.png"} w={"100%"} />
           <ArticlePreviewInformation />
-          <Heading fontWeight={500} as={"h3"} cursor={"pointer"} mb={1} fontSize={20}>
-            BREAKING: Kiley Listens To Sex Sounds
-          </Heading>
-          <ArticleDescriptionText fontSize={"small"}>
+          <PreviewHeading>BREAKING: Kiley Listens To Sex Sounds</PreviewHeading>
+          <PreviewDescription fontSize={"small"}>
             Another unfortunate case of how horniness affects the average human being
-          </ArticleDescriptionText>
+          </PreviewDescription>
         </Box>
         <Box>
           <Image src={"/placeholder.png"} w={"100%"} />
           <ArticlePreviewInformation />
-          <Heading fontWeight={500} as={"h3"} cursor={"pointer"} mb={1} fontSize={20}>
-            BREAKING: Kiley Listens To Sex Sounds
-          </Heading>
-          <ArticleDescriptionText fontSize={"small"}>
+          <PreviewHeading>BREAKING: Kiley Listens To Sex Sounds</PreviewHeading>
+          <PreviewDescription fontSize={"small"}>
             Another unfortunate case of how horniness affects the average human being
-          </ArticleDescriptionText>
+          </PreviewDescription>
         </Box>
       </VStack>
     </>

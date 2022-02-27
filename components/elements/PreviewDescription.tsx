@@ -5,7 +5,7 @@ interface Props {
   fontSize: "large" | "small";
 }
 
-const ArticleDescriptionText: React.FC<Props> = ({ children, fontSize }) => {
+const PreviewDescription: React.FC<Props> = ({ children, fontSize }) => {
   return (
     <>
       <Text
@@ -20,4 +20,4 @@ const ArticleDescriptionText: React.FC<Props> = ({ children, fontSize }) => {
   );
 };
 
-export default ArticleDescriptionText;
+export default PreviewDescription;

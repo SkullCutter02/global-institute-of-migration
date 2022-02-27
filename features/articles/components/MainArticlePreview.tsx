@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Heading, Image } from "@chakra-ui/react";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
-import ArticleDescriptionText from "./ArticleDescriptionText";
+import PreviewDescription from "../../../components/elements/PreviewDescription";
 
 const MainArticlePreview: React.FC = () => {
   return (
@@ -20,10 +20,10 @@ const MainArticlePreview: React.FC = () => {
         <Heading cursor={"pointer"} mb={3}>
           Ukraine In Danger
         </Heading>
-        <ArticleDescriptionText fontSize={"large"}>
+        <PreviewDescription fontSize={"large"}>
           Russia is Putin their army in Ukraine. Allies urge countries to sanction Russia. When will this
           madness end? At press time, wide Putin is seen in his natural habitat.
-        </ArticleDescriptionText>
+        </PreviewDescription>
       </Box>
     </>
   );
