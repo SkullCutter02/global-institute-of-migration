@@ -13,7 +13,7 @@ const LatestVideosPreview: React.FC = () => {
           <Text textStyle={"preview-heading"}>
             Jason Reconsiders His Sexuality As Jonathan Pins Him On Bed
           </Text>
-          <Text textStyle={"large-description"}>
+          <Text textStyle={"small-description"}>
             The sexually frustrated male hopes to find a new companion
           </Text>
         </Box>
@@ -25,7 +25,7 @@ const LatestVideosPreview: React.FC = () => {
           <Text textStyle={"preview-heading"}>
             Jason Reconsiders His Sexuality As Jonathan Pins Him On Bed
           </Text>
-          <Text textStyle={"large-description"}>
+          <Text textStyle={"small-description"}>
             The sexually frustrated male hopes to find a new companion
           </Text>
         </Box>
@@ -42,7 +42,7 @@ const LatestVideosPreview: React.FC = () => {
           <Text textStyle={"preview-heading"}>
             Jason Reconsiders His Sexuality As Jonathan Pins Him On Bed
           </Text>
-          <Text textStyle={"large-description"}>
+          <Text textStyle={"small-description"}>
             The sexually frustrated male hopes to find a new companion
           </Text>
         </Box>
