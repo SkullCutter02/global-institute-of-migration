@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         wrap={"wrap"}
         align={"center"}
         maxH={{ base: isOpen ? "400px" : "100px", sm: isOpen ? "150px" : "100px", md: "max-content" }}
-        transition={{ base: "max-height 0.3s linear", sm: "max-height 0.2s linear", md: null }}
+        transition={{ base: "max-height 0.3s ease-in-out", sm: "max-height 0.2s ease-in-out", md: null }}
         overflowY={"hidden"}
       >
         <NavbarLogo />

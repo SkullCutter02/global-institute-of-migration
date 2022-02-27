@@ -7,7 +7,7 @@ const NavbarLinks: React.FC = () => {
     <>
       <Box display={"block"} flexBasis={{ base: "100%", md: "auto" }}>
         <Stack
-          spacing={8}
+          spacing={10}
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "row", "row", "row"]}
