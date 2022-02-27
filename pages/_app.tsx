@@ -6,6 +6,7 @@ import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import Navbar from "../components/layout/navbar/Navbar";
+import Footer from "../components/layout/footer/Footer";
 import theme from "../theme/theme";
 
 import "@fontsource/saira-semi-condensed";
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ChakraProvider theme={theme}>
           <Navbar />
           <Component {...pageProps} />
+          <Footer />
         </ChakraProvider>
       </Hydrate>
       <ReactQueryDevtools />

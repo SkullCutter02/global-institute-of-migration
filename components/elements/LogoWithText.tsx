@@ -2,14 +2,14 @@ import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
-import logo from "../../../public/logo.png";
+import logo from "../../public/logo.png";
 
-const NavbarLogo: React.FC = () => {
+const LogoWithText: React.FC = () => {
   return (
     <>
       <Flex alignItems={"center"} cursor={"pointer"}>
         <Image src={logo} layout={"fixed"} />
-        <Text fontWeight={"bold"} ml={4} fontSize={23}>
+        <Text fontWeight={"bold"} color={"white"} ml={4} fontSize={23}>
           WFRM
         </Text>
       </Flex>
@@ -17,4 +17,4 @@ const NavbarLogo: React.FC = () => {
   );
 };
 
-export default NavbarLogo;
+export default LogoWithText;
