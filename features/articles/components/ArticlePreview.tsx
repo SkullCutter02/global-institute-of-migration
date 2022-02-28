@@ -1,6 +1,6 @@
 import React from "react";
 import { TypeOf } from "@directus/sdk";
-import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Heading, Image, Text, Flex } from "@chakra-ui/react";
 
 import { DirectusCollections } from "../../../generated/directus";
 import HOST from "../../../constants/host";
@@ -13,17 +13,21 @@ interface Props {
 const ArticlePreview: React.FC<Props> = ({ article }) => {
   return (
     <>
-      <HStack
+      <Flex
         as={"article"}
         w={"100%"}
         key={article.id}
         justifyContent={"space-between"}
         alignItems={"stretch"}
-        spacing={12}
+        flexDirection={{ base: "column", md: "row" }}
       >
-        <Image src={`${HOST}/assets/${article.main_article_image}`} objectFit={"cover"} w={"35%"} />
+        <Image
+          src={`${HOST}/assets/${article.main_article_image}`}
+          objectFit={"cover"}
+          w={{ base: "100%", md: "35%" }}
+        />
         {typeof article.author !== "string" && (
-          <Box w={"65%"}>
+          <Box ml={{ base: 0, md: 12 }} mt={{ base: 12, md: 0 }} w={{ base: "100%", md: "65%" }}>
             <Text textStyle={"information"} mb={4}>
               {article.author.name}
             </Text>
@@ -48,7 +52,7 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
             </Text>
           </Box>
         )}
-      </HStack>
+      </Flex>
     </>
   );
 };
