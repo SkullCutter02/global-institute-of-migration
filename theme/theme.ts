@@ -42,6 +42,12 @@ const theme = extendTheme({
       color: "gray.400",
     },
   },
+  layerStyles: {
+    "page-container": {
+      py: 16,
+      px: { base: 7, md: 10 },
+    },
+  },
 });
 
 export default theme;

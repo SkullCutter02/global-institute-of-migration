@@ -1,7 +1,9 @@
 import { format, parseISO } from "date-fns";
 
-const formatMediaDate = (dateStr: string) => {
-  return format(parseISO(dateStr), "MMM dd");
+type Options = { includeYear: boolean };
+
+const formatMediaDate = (dateStr: string, { includeYear }: Options = { includeYear: false }) => {
+  return format(parseISO(dateStr), `MMM dd${includeYear ? " yyyy" : ""}`);
 };
 
 export default formatMediaDate;

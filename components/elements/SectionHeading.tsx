@@ -1,7 +1,12 @@
 import React from "react";
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
-const LatestVideosHeading: React.FC = () => {
+interface Props {
+  heading: string;
+  hasViewAll?: boolean;
+}
+
+const SectionHeading: React.FC<Props> = ({ heading, hasViewAll = false }) => {
   return (
     <>
       <Flex
@@ -13,14 +18,16 @@ const LatestVideosHeading: React.FC = () => {
         pt={5}
       >
         <Heading fontFamily={"secondary"} fontWeight={800} color={"primary"}>
-          LATEST VIDEOS
+          {heading}
         </Heading>
-        <Text fontSize={18} fontFamily={"secondary"} fontWeight={800} cursor={"pointer"} color={"gray.500"}>
-          View All
-        </Text>
+        {hasViewAll && (
+          <Text fontSize={18} fontFamily={"secondary"} fontWeight={800} cursor={"pointer"} color={"gray.500"}>
+            View All
+          </Text>
+        )}
       </Flex>
     </>
   );
 };
 
-export default LatestVideosHeading;
+export default SectionHeading;
