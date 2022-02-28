@@ -3,7 +3,7 @@ import { TypeOf } from "@directus/sdk";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import { Image, OrderedList, Table, UnorderedList, Link } from "@chakra-ui/react";
+import { Image, OrderedList, Table, UnorderedList, Link, Text } from "@chakra-ui/react";
 
 import { DirectusCollections } from "../../../generated/directus";
 
@@ -12,6 +12,11 @@ interface Props {
 }
 
 const theme = {
+  p: ({ children, ...props }) => (
+    <Text my={5} {...props}>
+      {children}
+    </Text>
+  ),
   img: ({ children, ...props }) => (
     <Image w={"100%"} my={14} {...props}>
       {children}
