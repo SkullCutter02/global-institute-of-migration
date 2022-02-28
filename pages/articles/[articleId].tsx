@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import getArticle from "../../features/articles/api/getArticle";
 import HOST from "../../constants/host";
 import formatMediaDateWithTime from "../../utils/formatMediaDateWithTime";
+import ArticleBody from "../../features/articles/components/ArticleBody";
 
 const ArticlePage: React.FC = () => {
   const router = useRouter();
@@ -17,7 +18,7 @@ const ArticlePage: React.FC = () => {
   return (
     <>
       {typeof article.author !== "string" && (
-        <Box as={"main"} py={16} px={[7, 10, 20, 40]}>
+        <Box as={"main"} mb={24} py={16} px={[7, 10, 20, 40]}>
           <Heading textTransform={"capitalize"} fontWeight={700}>
             {article.heading}
           </Heading>
@@ -37,6 +38,7 @@ const ArticlePage: React.FC = () => {
             </Box>
           </Flex>
           <Image my={10} src={`${HOST}/assets/${article.main_article_image}`} w={"100%"} />
+          <ArticleBody article={article} />
         </Box>
       )}
     </>
