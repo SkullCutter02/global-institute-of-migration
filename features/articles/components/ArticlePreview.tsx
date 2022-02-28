@@ -5,6 +5,7 @@ import { Box, Heading, Image, Text, Flex } from "@chakra-ui/react";
 import { DirectusCollections } from "../../../generated/directus";
 import HOST from "../../../constants/host";
 import formatMediaDate from "../../../utils/formatMediaDate";
+import markdownToPlainText from "../../../utils/markdownToPlainText";
 
 interface Props {
   article: Partial<TypeOf<DirectusCollections, "articles">>;
@@ -50,7 +51,7 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
               noOfLines={3}
               mb={4}
             >
-              {article.body}
+              {markdownToPlainText(article.body)}
             </Text>
             <Text textStyle={"information"}>
               {formatMediaDate(article.created_at, { includeYear: true })}
