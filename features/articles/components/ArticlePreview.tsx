@@ -1,6 +1,7 @@
 import React from "react";
 import { TypeOf } from "@directus/sdk";
 import { Box, Heading, Image, Text, Flex } from "@chakra-ui/react";
+import Link from "next/link";
 
 import { DirectusCollections } from "../../../generated/directus";
 import HOST from "../../../constants/host";
@@ -37,14 +38,16 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
             <Text textStyle={"information"} mb={4}>
               {article.author.name}
             </Text>
-            <Heading
-              textTransform={"capitalize"}
-              cursor={"pointer"}
-              fontSize={{ base: 23, md: 27 }}
-              fontWeight={700}
-            >
-              {article.heading}
-            </Heading>
+            <Link href={`/articles/${article.id}`}>
+              <Heading
+                textTransform={"capitalize"}
+                cursor={"pointer"}
+                fontSize={{ base: 23, md: 27 }}
+                fontWeight={700}
+              >
+                {article.heading}
+              </Heading>
+            </Link>
             <Text textStyle={"large-description"} mb={4}>
               {article.subheading}
             </Text>
