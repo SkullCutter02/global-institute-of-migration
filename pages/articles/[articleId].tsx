@@ -8,6 +8,7 @@ import getArticle from "../../features/articles/api/getArticle";
 import HOST from "../../constants/host";
 import formatMediaDateWithTime from "../../utils/formatMediaDateWithTime";
 import ArticleBody from "../../features/articles/components/ArticleBody";
+import ArticleMetaHead from "../../features/articles/components/ArticleMetaHead";
 
 const ArticlePage: React.FC = () => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const ArticlePage: React.FC = () => {
 
   return (
     <>
+      <ArticleMetaHead article={article} />
       {typeof article.author !== "string" && (
         <Box as={"main"} mb={24} py={16} px={[7, 10, 20, 40]}>
           <Heading textTransform={"capitalize"} fontWeight={700}>
