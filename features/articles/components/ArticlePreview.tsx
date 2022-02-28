@@ -31,7 +31,12 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
             <Text textStyle={"information"} mb={4}>
               {article.author.name}
             </Text>
-            <Heading cursor={"pointer"} fontSize={{ base: 23, md: 27 }} fontWeight={500}>
+            <Heading
+              textTransform={"capitalize"}
+              cursor={"pointer"}
+              fontSize={{ base: 23, md: 27 }}
+              fontWeight={500}
+            >
               {article.heading}
             </Heading>
             <Text textStyle={"large-description"} mb={4}>

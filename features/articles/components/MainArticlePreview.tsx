@@ -21,7 +21,7 @@ const MainArticlePreview: React.FC = () => {
       >
         <Image src={`${HOST}/assets/${articles[0].main_article_image}`} w={"100%"} />
         <ArticlePreviewInformation article={articles[0]} />
-        <Heading as={"h1"} cursor={"pointer"} mb={3}>
+        <Heading as={"h1"} textTransform={"capitalize"} cursor={"pointer"} mb={3}>
           {articles[0].heading}
         </Heading>
         <Text textStyle={"large-description"}>{articles[0].subheading}</Text>

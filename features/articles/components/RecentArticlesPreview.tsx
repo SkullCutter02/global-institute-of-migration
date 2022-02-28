@@ -23,7 +23,7 @@ const RecentArticlesPreview: React.FC = () => {
           <Box w={"100%"} key={article.id}>
             <Image src={`${HOST}/assets/${article.main_article_image}`} w={"100%"} />
             <ArticlePreviewInformation article={article} />
-            <Text as={"h2"} textStyle={"preview-heading"}>
+            <Text as={"h2"} textTransform={"capitalize"} textStyle={"preview-heading"}>
               {article.heading}
             </Text>
             <Text textStyle={"small-description"}>{article.subheading}</Text>
