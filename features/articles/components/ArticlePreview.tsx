@@ -35,7 +35,7 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
             mb={{ base: 12, md: 0 }}
             w={{ base: "100%", md: "65%" }}
           >
-            <Text textStyle={"information"} mb={4}>
+            <Text textStyle={"information"} mb={2}>
               {article.author.name}
             </Text>
             <Link href={`/articles/${article.id}`}>
