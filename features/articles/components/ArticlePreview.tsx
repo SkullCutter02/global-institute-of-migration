@@ -36,7 +36,7 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
               textTransform={"capitalize"}
               cursor={"pointer"}
               fontSize={{ base: 23, md: 27 }}
-              fontWeight={500}
+              fontWeight={700}
             >
               {article.heading}
             </Heading>

@@ -17,7 +17,7 @@ const SectionHeading: React.FC<Props> = ({ heading, hasViewAll = false }) => {
         pb={4}
         pt={5}
       >
-        <Heading fontFamily={"secondary"} fontWeight={800} color={"primary"}>
+        <Heading fontWeight={800} color={"primary"}>
           {heading}
         </Heading>
         {hasViewAll && (

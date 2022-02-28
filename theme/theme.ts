@@ -11,8 +11,8 @@ const theme = extendTheme({
     error: "#bd1717",
   },
   fonts: {
-    heading: "Tiempos Headline, sans-serif",
-    body: "Tiempos Headline, sans-serif",
+    heading: "Merriweather, sans-serif",
+    body: "Merriweather, sans-serif",
     secondary: "Saira Semi Condensed, sans-serif",
   },
   textStyles: {

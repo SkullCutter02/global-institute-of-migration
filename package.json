@@ -13,6 +13,7 @@
     "@directus/sdk": "^9.5.2",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/merriweather": "^4.5.5",
     "@fontsource/saira-semi-condensed": "^4.5.2",
     "date-fns": "^2.28.0",
     "framer-motion": "^5",

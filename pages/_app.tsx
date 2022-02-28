@@ -10,6 +10,7 @@ import Footer from "../components/layout/footer/Footer";
 import theme from "../theme/theme";
 
 import "@fontsource/saira-semi-condensed";
+import "@fontsource/merriweather";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
