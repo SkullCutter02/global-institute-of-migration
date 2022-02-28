@@ -9,6 +9,12 @@ const ArticlesPage: React.FC = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  if (!context.query.page) {
+    return {
+      notFound: true,
+    };
+  }
+
   const page = parseInt(context.query.page as string);
 
   const queryClient = new QueryClient();
