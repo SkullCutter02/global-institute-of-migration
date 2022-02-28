@@ -14,17 +14,38 @@ const ArticleMetaHead: React.FC<Props> = ({ article }) => {
   return (
     <>
       <Head>
-        <title>{capitaliseEveryWord(article.heading)}</title>
-        <meta name={"description"} content={article.subheading} />
-        <meta name={"robots"} content={"index, nofollow"} />
-        <meta property={"og:title"} content={capitaliseEveryWord(article.heading)} />
-        <meta property={"og:type"} content={"article"} />
-        <meta property={"og:url"} content={`${process.env.NEXT_PUBLIC_URL}/articles/${article.id}`} />
-        <meta property={"og:image"} content={`${HOST}/assets/${article.main_article_image}`} />
-        <meta property={"twitter:title"} content={capitaliseEveryWord(article.heading)} />
-        <meta property={"twitter:description"} content={article.subheading} />
-        <meta property={"twitter:url"} content={`${process.env.NEXT_PUBLIC_URL}/articles/${article.id}`} />
-        <meta property={"twitter:image"} content={`${HOST}/assets/${article.main_article_image}`} />
+        <title key={"title"}>{capitaliseEveryWord(article.heading)}</title>
+        <meta name={"description"} content={article.subheading} key={"description"} />
+        <meta name={"robots"} content={"index, nofollow"} key={"robots"} />
+        <meta property={"og:title"} content={capitaliseEveryWord(article.heading)} key={"og:title"} />
+        <meta property={"og:description"} content={article.subheading} key={"og:description"} />
+        <meta property={"og:type"} content={"article"} key={"og:type"} />
+        <meta
+          property={"og:url"}
+          content={`${process.env.NEXT_PUBLIC_URL}/articles/${article.id}`}
+          key={"og:url"}
+        />
+        <meta
+          property={"og:image"}
+          content={`${HOST}/assets/${article.main_article_image}`}
+          key={"og:image"}
+        />
+        <meta
+          property={"twitter:title"}
+          content={capitaliseEveryWord(article.heading)}
+          key={"twitter:title"}
+        />
+        <meta property={"twitter:description"} content={article.subheading} key={"twitter:description"} />
+        <meta
+          property={"twitter:url"}
+          content={`${process.env.NEXT_PUBLIC_URL}/articles/${article.id}`}
+          key={"twitter:url"}
+        />
+        <meta
+          property={"twitter:image"}
+          content={`${HOST}/assets/${article.main_article_image}`}
+          key={"twitter:image"}
+        />
       </Head>
     </>
   );
