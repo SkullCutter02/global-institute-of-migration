@@ -19,17 +19,17 @@ const theme = extendTheme({
     "small-description": {
       fontFamily: "secondary",
       color: "gray.500",
-      fontWeight: 600,
+      fontWeight: 500,
       fontSize: 16,
     },
     "large-description": {
       fontFamily: "secondary",
       color: "gray.500",
-      fontWeight: 600,
+      fontWeight: 500,
       fontSize: 18,
     },
     "preview-heading": {
-      fontWeight: 500,
+      fontWeight: 600,
       mb: 1,
       fontSize: { base: 24, md: 22 },
       cursor: "pointer",

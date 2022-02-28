@@ -9,8 +9,19 @@ import Navbar from "../components/layout/navbar/Navbar";
 import Footer from "../components/layout/footer/Footer";
 import theme from "../theme/theme";
 
-import "@fontsource/saira-semi-condensed";
-import "@fontsource/merriweather";
+import "@fontsource/saira-semi-condensed/100.css";
+import "@fontsource/saira-semi-condensed/200.css";
+import "@fontsource/saira-semi-condensed/300.css";
+import "@fontsource/saira-semi-condensed/400.css";
+import "@fontsource/saira-semi-condensed/500.css";
+import "@fontsource/saira-semi-condensed/600.css";
+import "@fontsource/saira-semi-condensed/700.css";
+import "@fontsource/saira-semi-condensed/800.css";
+import "@fontsource/saira-semi-condensed/900.css";
+import "@fontsource/merriweather/300.css";
+import "@fontsource/merriweather/400.css";
+import "@fontsource/merriweather/700.css";
+import "@fontsource/merriweather/900.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());

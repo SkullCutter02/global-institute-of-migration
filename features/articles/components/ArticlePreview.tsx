@@ -43,14 +43,7 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
             <Text textStyle={"large-description"} mb={4}>
               {article.subheading}
             </Text>
-            <Text
-              fontFamily={"secondary"}
-              w={"100%"}
-              color={"gray.500"}
-              fontWeight={"light"}
-              noOfLines={3}
-              mb={4}
-            >
+            <Text w={"100%"} fontFamily={"secondary"} color={"gray.500"} noOfLines={3} mb={4}>
               {markdownToPlainText(article.body)}
             </Text>
             <Text textStyle={"information"}>
