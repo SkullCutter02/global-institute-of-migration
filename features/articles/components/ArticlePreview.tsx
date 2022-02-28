@@ -28,7 +28,12 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
           w={{ base: "100%", md: "35%" }}
         />
         {typeof article.author !== "string" && (
-          <Box ml={{ base: 0, md: 12 }} mt={{ base: 12, md: 0 }} w={{ base: "100%", md: "65%" }}>
+          <Box
+            ml={{ base: 0, md: 12 }}
+            mt={{ base: 4, md: 0 }}
+            mb={{ base: 12, md: 0 }}
+            w={{ base: "100%", md: "65%" }}
+          >
             <Text textStyle={"information"} mb={4}>
               {article.author.name}
             </Text>
