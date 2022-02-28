@@ -3,7 +3,7 @@ import { TypeOf } from "@directus/sdk";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import { Image, Table } from "@chakra-ui/react";
+import { Image, OrderedList, Table, UnorderedList, Link } from "@chakra-ui/react";
 
 import { DirectusCollections } from "../../../generated/directus";
 
@@ -21,6 +21,21 @@ const theme = {
     <Table my={7} {...props}>
       {children}
     </Table>
+  ),
+  ul: ({ children, ...props }) => (
+    <UnorderedList my={5} {...props}>
+      {children}
+    </UnorderedList>
+  ),
+  ol: ({ children, ...props }) => (
+    <OrderedList my={5} {...props}>
+      {children}
+    </OrderedList>
+  ),
+  a: ({ children, ...props }) => (
+    <Link {...props} color={"blue.500"} target={"_blank"}>
+      {children}
+    </Link>
   ),
 };
 
