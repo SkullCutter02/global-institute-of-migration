@@ -7,7 +7,7 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 
 import Navbar from "../components/layout/navbar/Navbar";
 import Footer from "../components/layout/footer/Footer";
-import GlobalHead from "../components/elements/GlobalHead";
+import GlobalHead from "../components/layout/GlobalHead";
 import theme from "../theme/theme";
 
 import "@fontsource/saira-semi-condensed/100.css";
