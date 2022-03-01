@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import getVideo from "../../features/videos/api/getVideo";
 import getYoutubeVideoID from "../../utils/getYoutubeVideoID";
 import formatMediaDate from "../../utils/formatMediaDate";
+import VideoMetaHead from "../../features/videos/components/VideoMetaHead";
 
 const VideoPage: React.FC = () => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const VideoPage: React.FC = () => {
 
   return (
     <>
+      <VideoMetaHead video={video} />
       <Box as={"main"} py={16} mb={24} px={[7, 10, 20, 40]}>
         <YouTube
           containerClassName="youtube-iframe-video-container"
