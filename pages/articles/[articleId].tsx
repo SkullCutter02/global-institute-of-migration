@@ -22,6 +22,9 @@ const ArticlePage: React.FC = () => {
       <ArticleMetaHead article={article} />
       {typeof article.author !== "string" && (
         <Box as={"main"} mb={24} py={16} px={[7, 10, 20, 40]}>
+          <Text textTransform={"capitalize"} color={"gray.500"} fontSize={20} fontFamily={"secondary"} mb={4}>
+            {article.category}
+          </Text>
           <Heading textTransform={"capitalize"} fontWeight={700}>
             {article.heading}
           </Heading>

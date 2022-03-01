@@ -36,7 +36,10 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
             w={{ base: "100%", md: "65%" }}
           >
             <Text textStyle={"information"} mb={2}>
-              {article.author.name}
+              <Box as={"span"} textTransform={"uppercase"} color={"primary"} fontWeight={700}>
+                {article.category}
+              </Box>{" "}
+              <Box as={"span"}>|</Box> {article.author.name}
             </Text>
             <Link href={`/articles/${article.id}`}>
               <Heading
