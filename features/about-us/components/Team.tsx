@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { AspectRatio, Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 import SectionHeading from "../../../components/elements/SectionHeading";
 import getWriters from "../api/getWriters";
@@ -23,17 +24,19 @@ const Team: React.FC = () => {
             <AspectRatio maxW={"100%"} ratio={1}>
               <Image src={`${HOST}/assets/${writer.image}`} borderRadius={"full"} boxSize={"100%"} />
             </AspectRatio>
-            <Text
-              mt={4}
-              fontWeight={600}
-              fontFamily={"secondary"}
-              textTransform={"uppercase"}
-              textAlign={"center"}
-              fontSize={{ base: 19, sm: 22, md: 25 }}
-              cursor={"pointer"}
-            >
-              {writer.name}
-            </Text>
+            <Link href={`/writers/${writer.id}`}>
+              <Text
+                mt={4}
+                fontWeight={600}
+                fontFamily={"secondary"}
+                textTransform={"uppercase"}
+                textAlign={"center"}
+                fontSize={{ base: 19, sm: 22, md: 25 }}
+                cursor={"pointer"}
+              >
+                {writer.name}
+              </Text>
+            </Link>
             <Text
               fontWeight={600}
               fontFamily={"secondary"}
