@@ -1,12 +1,14 @@
 import React from "react";
 import { Flex, Heading, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 interface Props {
   heading: string;
   hasViewAll?: boolean;
+  to?: string;
 }
 
-const SectionHeading: React.FC<Props> = ({ heading, hasViewAll = false }) => {
+const SectionHeading: React.FC<Props> = ({ heading, hasViewAll = false, to }) => {
   return (
     <>
       <Flex
@@ -21,9 +23,17 @@ const SectionHeading: React.FC<Props> = ({ heading, hasViewAll = false }) => {
           {heading}
         </Heading>
         {hasViewAll && (
-          <Text fontSize={18} fontFamily={"secondary"} fontWeight={800} cursor={"pointer"} color={"gray.500"}>
-            View All
-          </Text>
+          <Link href={to}>
+            <Text
+              fontSize={18}
+              fontFamily={"secondary"}
+              fontWeight={800}
+              cursor={"pointer"}
+              color={"gray.500"}
+            >
+              View All
+            </Text>
+          </Link>
         )}
       </Flex>
     </>

@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
         </Flex>
 
         <Box my={16} as={"section"}>
-          <SectionHeading heading={"LATEST VIDEOS"} hasViewAll />
+          <SectionHeading heading={"LATEST VIDEOS"} hasViewAll to={"/videos?page=1"} />
           <LatestVideosPreview />
         </Box>
       </Box>
