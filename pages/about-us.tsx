@@ -7,6 +7,7 @@ import OurMission from "../features/about-us/components/OurMission";
 import Partners from "../features/about-us/components/Partners";
 import Team from "../features/about-us/components/Team";
 import getWriters from "../features/about-us/api/getWriters";
+import getPartners from "../features/about-us/api/getPartners";
 
 const AboutUsPage: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery("writers", () => getWriters());
+  await queryClient.prefetchQuery("partners", () => getPartners());
 
   return {
     props: {

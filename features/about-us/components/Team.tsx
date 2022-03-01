@@ -29,7 +29,7 @@ const Team: React.FC = () => {
               fontFamily={"secondary"}
               textTransform={"uppercase"}
               textAlign={"center"}
-              fontSize={25}
+              fontSize={{ base: 19, sm: 22, md: 25 }}
               cursor={"pointer"}
             >
               {writer.name}
@@ -40,7 +40,7 @@ const Team: React.FC = () => {
               textTransform={"uppercase"}
               color={"primary"}
               textAlign={"center"}
-              fontSize={18}
+              fontSize={{ base: 15, md: 18 }}
             >
               {writer.role}
             </Text>
