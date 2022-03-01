@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { TypeOf } from "@directus/sdk";
+import Link from "next/link";
+
 import { DirectusCollections } from "../../../generated/directus";
 import HOST from "../../../constants/host";
 import formatMediaDate from "../../../utils/formatMediaDate";
@@ -23,7 +25,9 @@ const VideoCard: React.FC<Props> = ({ video, includeYear = false }) => {
         <Text my={2} textStyle={"information"}>
           {formatMediaDate(video.created_at, { includeYear })}
         </Text>
-        <Text textStyle={"preview-heading"}>{video.title}</Text>
+        <Link href={`/videos/${video.id}`}>
+          <Text textStyle={"preview-heading"}>{video.title}</Text>
+        </Link>
         <Text textStyle={"small-description"}>{video.description}</Text>
       </Box>
     </>
