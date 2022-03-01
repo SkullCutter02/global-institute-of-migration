@@ -12,7 +12,9 @@ const ProgressiveImage: React.FC<Props> = ({ src, fromMarkdown = false, ...props
   return (
     <>
       <ProgImage
-        placeholder={fromMarkdown ? `${src}?width=50` : `${HOST}/assets/${src}?width=50`}
+        placeholder={
+          fromMarkdown ? `${src}?width=50&quality=10` : `${HOST}/assets/${src}?width=50&quality=10`
+        }
         src={fromMarkdown ? src : `${HOST}/assets/${src}`}
       >
         {(src: string, isLoading: boolean) => (
