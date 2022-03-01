@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import getWriter from "../../features/about-us/api/getWriter";
 import ProgressiveImage from "../../components/elements/ProgressiveImage";
+import WriterMetaHead from "../../features/about-us/components/WriterMetaHead";
 
 const WriterPage: React.FC = () => {
   const router = useRouter();
@@ -15,6 +16,7 @@ const WriterPage: React.FC = () => {
 
   return (
     <>
+      <WriterMetaHead writer={writer} />
       <Flex as={"main"} flexDirection={{ base: "column", sm: "row" }} layerStyle={"page-container"}>
         <Box w={{ base: "85%", sm: "25%" }} margin={{ base: "0 auto", sm: 0 }}>
           <AspectRatio maxW={"100%"} ratio={1}>
