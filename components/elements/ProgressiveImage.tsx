@@ -16,7 +16,7 @@ const ProgressiveImage: React.FC<Props> = ({ src, fromMarkdown = false, aspectRa
   const { isInView } = useIntersection(imgRef);
 
   const { src: imgSrc, blur: imgBlur } = useProgressiveImage(
-    fromMarkdown ? `${src}?width=50&quality=1` : `${HOST}/assets/${src}?width=50&quality=1`,
+    fromMarkdown ? `${src}?width=50&quality=1` : `${HOST}/assets/${src}?width=5&quality=1`,
     fromMarkdown ? src : `${HOST}/assets/${src}`,
     isInView
   );
