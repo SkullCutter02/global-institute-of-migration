@@ -23,7 +23,7 @@ const VideosPage: React.FC = () => {
         <SectionHeading heading={"ALL VIDEOS"} />
         <SimpleGrid mt={10} mb={20} columns={{ base: 1, sm: 2, md: 3 }} spacing={5} spacingY={10}>
           {videos.map((video) => (
-            <VideoCard video={video} />
+            <VideoCard video={video} includeYear />
           ))}
         </SimpleGrid>
         <PaginationButtons page={page} hasMore={hasMore} to={"/videos"} />
