@@ -8,6 +8,7 @@ import SectionHeading from "../components/elements/SectionHeading";
 import LatestVideosPreview from "../features/videos/components/LatestVideosPreview";
 import { dehydrate, QueryClient } from "react-query";
 import getRecentArticles from "../features/articles/api/getRecentArticles";
+import getRecentVideos from "../features/videos/api/getRecentVideos";
 
 const HomePage: React.FC = () => {
   return (
@@ -31,6 +32,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery("recent-articles", () => getRecentArticles());
+  await queryClient.prefetchQuery("recent-videos", () => getRecentVideos());
 
   return {
     props: {
