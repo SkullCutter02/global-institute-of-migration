@@ -16,12 +16,7 @@ const ProgressiveImage: React.FC<Props> = ({ src, fromMarkdown = false, ...props
         src={fromMarkdown ? src : `${HOST}/assets/${src}`}
       >
         {(src: string, isLoading: boolean) => (
-          <Image
-            src={src}
-            filter={isLoading ? "blur(10px)" : "blur(0px)"}
-            transition={"filter 0.5s linear"}
-            {...props}
-          />
+          <Image src={src} filter={isLoading ? "blur(10px)" : "blur(0px)"} {...props} />
         )}
       </ProgImage>
     </>
