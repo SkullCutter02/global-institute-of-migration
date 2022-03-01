@@ -11,17 +11,15 @@ interface Props extends ImageProps {
 }
 
 const ProgressiveImage: React.FC<Props> = ({ src, fromMarkdown = false, aspectRatio = 16 / 9, ...props }) => {
-  const [isInView, setIsInView] = useState<boolean>(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const { isInView } = useIntersection(imgRef);
 
   const { src: imgSrc, blur: imgBlur } = useProgressiveImage(
     fromMarkdown ? `${src}?width=50&quality=1` : `${HOST}/assets/${src}?width=50&quality=1`,
     fromMarkdown ? src : `${HOST}/assets/${src}`,
     isInView
   );
-
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  useIntersection(imgRef, () => setIsInView(true));
 
   return (
     <>

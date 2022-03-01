@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
 let listenerCallbacks = new WeakMap();
 
@@ -28,11 +28,13 @@ function getIntersectionObserver() {
   return observer;
 }
 
-export default function useIntersection(elem: MutableRefObject<any>, callback: any) {
+export default function useIntersection(elem: MutableRefObject<any>) {
+  const [isInView, setIsInView] = useState<boolean>(false);
+
   useEffect(() => {
     let target = elem.current;
     let observer = getIntersectionObserver();
-    listenerCallbacks.set(target, callback);
+    listenerCallbacks.set(target, () => setIsInView(true));
     observer.observe(target);
 
     return () => {
@@ -40,4 +42,6 @@ export default function useIntersection(elem: MutableRefObject<any>, callback: a
       observer.unobserve(target);
     };
   }, []);
+
+  return { isInView };
 }
