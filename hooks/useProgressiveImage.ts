@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
 
-const useProgressiveImage = (lowQualitySrc: string, highQualitySrc: string) => {
+const useProgressiveImage = (lowQualitySrc: string, highQualitySrc: string, isInView: boolean = null) => {
   const [src, setSrc] = React.useState(lowQualitySrc);
 
   useEffect(() => {
-    setSrc(lowQualitySrc);
+    if (isInView === null || isInView) {
+      setSrc(lowQualitySrc);
 
-    const img = new Image();
+      const img = new Image();
 
-    img.src = highQualitySrc;
+      img.src = highQualitySrc;
 
-    img.onload = () => {
-      setSrc(highQualitySrc);
-    };
-  }, [lowQualitySrc, highQualitySrc]);
+      img.onload = () => {
+        setSrc(highQualitySrc);
+      };
+    }
+  }, [lowQualitySrc, highQualitySrc, isInView]);
 
   return { src, blur: src === lowQualitySrc };
 };
