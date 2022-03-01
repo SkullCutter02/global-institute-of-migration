@@ -20,6 +20,7 @@ const ProgressiveImage: React.FC<Props> = ({ src, fromMarkdown = false, ...props
         src={imgSrc}
         filter={imgBlur ? "blur(20px)" : "none"}
         transition={imgBlur ? "none" : "filter 0.3s ease-out"}
+        clipPath={"inset(0)"}
         {...props}
       />
     </>
