@@ -82,6 +82,20 @@ export interface paths {
     /** Update an existing articles item. */
     patch: operations["updateSingleItemsArticles"];
   };
+  "/items/partners": {
+    /** List the partners items. */
+    get: operations["readItemsPartners"];
+    /** Create a new partners item. */
+    post: operations["createItemsPartners"];
+  };
+  "/items/partners/{id}": {
+    /** Retrieve a single partners item by unique identifier. */
+    get: operations["readSingleItemsPartners"];
+    /** Delete an existing partners item. */
+    delete: operations["deleteSingleItemsPartners"];
+    /** Update an existing partners item. */
+    patch: operations["updateSingleItemsPartners"];
+  };
   "/items/videos": {
     /** List the videos items. */
     get: operations["readItemsVideos"];
@@ -324,11 +338,19 @@ export interface components {
       id?: string;
       created_at?: string | null;
       updated_at?: string | null;
-      heading?: string | null;
-      subheading?: string | null;
       main_article_image?: (string | components["schemas"]["Files"]) | null;
       body?: string | null;
       author?: (string | components["schemas"]["ItemsWriters"]) | null;
+      heading?: string | null;
+      subheading?: string | null;
+    };
+    ItemsPartners: {
+      id?: string;
+      created_at?: string | null;
+      updated_at?: string | null;
+      name?: string | null;
+      website_url?: string | null;
+      logo?: (string | components["schemas"]["Files"]) | null;
     };
     ItemsVideos: {
       id?: string;
@@ -346,6 +368,8 @@ export interface components {
       name?: string | null;
       bio?: string | null;
       image?: (string | components["schemas"]["Files"]) | null;
+      role?: string | null;
+      importance?: number | null;
     };
     Activity: {
       /** Unique identifier for the object. */
@@ -1178,6 +1202,139 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": components["schemas"]["ItemsArticles"];
+      };
+    };
+  };
+  /** List the partners items. */
+  readItemsPartners: {
+    parameters: {
+      query: {
+        /** Control what fields are being returned in the object. */
+        fields?: components["parameters"]["Fields"];
+        /** A limit on the number of objects that are returned. */
+        limit?: components["parameters"]["Limit"];
+        /** What metadata to return in the response. */
+        meta?: components["parameters"]["Meta"];
+        /** How many items to skip when fetching data. */
+        offset?: components["parameters"]["Offset"];
+        /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
+        sort?: components["parameters"]["Sort"];
+        /** Select items in collection by given conditions. */
+        filter?: components["parameters"]["Filter"];
+        /** Filter by items that contain the given search query in one of their fields. */
+        search?: components["parameters"]["Search"];
+      };
+    };
+    responses: {
+      /** Successful request */
+      200: {
+        content: {
+          "application/json": {
+            data?: components["schemas"]["ItemsPartners"][];
+          };
+        };
+      };
+      401: components["responses"]["UnauthorizedError"];
+    };
+  };
+  /** Create a new partners item. */
+  createItemsPartners: {
+    parameters: {
+      query: {
+        /** What metadata to return in the response. */
+        meta?: components["parameters"]["Meta"];
+      };
+    };
+    responses: {
+      /** Successful request */
+      200: {
+        content: {
+          "application/json": {
+            data?: components["schemas"]["ItemsPartners"][];
+          };
+        };
+      };
+      401: components["responses"]["UnauthorizedError"];
+    };
+    requestBody: {
+      content: {
+        "application/json":
+          | components["schemas"]["ItemsPartners"][]
+          | components["schemas"]["ItemsPartners"];
+      };
+    };
+  };
+  /** Retrieve a single partners item by unique identifier. */
+  readSingleItemsPartners: {
+    parameters: {
+      query: {
+        /** Control what fields are being returned in the object. */
+        fields?: components["parameters"]["Fields"];
+        /** What metadata to return in the response. */
+        meta?: components["parameters"]["Meta"];
+      };
+      path: {
+        /** Index of the item. */
+        id: number | string;
+      };
+    };
+    responses: {
+      /** Successful request */
+      200: {
+        content: {
+          "application/json": {
+            data?: components["schemas"]["ItemsPartners"][];
+          };
+        };
+      };
+      401: components["responses"]["UnauthorizedError"];
+      404: components["responses"]["NotFoundError"];
+    };
+  };
+  /** Delete an existing partners item. */
+  deleteSingleItemsPartners: {
+    parameters: {
+      path: {
+        /** Index of the item. */
+        id: number | string;
+      };
+    };
+    responses: {
+      /** Successful request */
+      200: unknown;
+      401: components["responses"]["UnauthorizedError"];
+      404: components["responses"]["NotFoundError"];
+    };
+  };
+  /** Update an existing partners item. */
+  updateSingleItemsPartners: {
+    parameters: {
+      query: {
+        /** Control what fields are being returned in the object. */
+        fields?: components["parameters"]["Fields"];
+        /** What metadata to return in the response. */
+        meta?: components["parameters"]["Meta"];
+      };
+      path: {
+        /** Index of the item. */
+        id: number | string;
+      };
+    };
+    responses: {
+      /** Successful request */
+      200: {
+        content: {
+          "application/json": {
+            data?: components["schemas"]["ItemsPartners"][];
+          };
+        };
+      };
+      401: components["responses"]["UnauthorizedError"];
+      404: components["responses"]["NotFoundError"];
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ItemsPartners"];
       };
     };
   };
@@ -3539,6 +3696,7 @@ export interface operations {
 
 export type DirectusCollections = {
   articles: components["schemas"]["ItemsArticles"];
+  partners: components["schemas"]["ItemsPartners"];
   videos: components["schemas"]["ItemsVideos"];
   writers: components["schemas"]["ItemsWriters"];
 };
