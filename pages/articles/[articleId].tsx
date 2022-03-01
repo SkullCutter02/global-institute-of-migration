@@ -3,6 +3,7 @@ import { Box, Flex, Heading, Text, Avatar } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import getArticle from "../../features/articles/api/getArticle";
 import HOST from "../../constants/host";
@@ -34,9 +35,11 @@ const ArticlePage: React.FC = () => {
           <Flex mt={10}>
             <Avatar src={`${HOST}/assets/${article.author.image}?width=100`} />
             <Box ml={5}>
-              <Text cursor={"pointer"} fontFamily={"secondary"} fontWeight={600}>
-                {article.author.name}
-              </Text>
+              <Link href={`/writers/${article.author.id}`}>
+                <Text cursor={"pointer"} fontFamily={"secondary"} fontWeight={600}>
+                  {article.author.name}
+                </Text>
+              </Link>
               <Text fontFamily={"secondary"} color={"gray.500"}>
                 Published: {formatMediaDateWithTime(article.created_at)}
                 {article.updated_at ? ` (Updated: ${formatMediaDateWithTime(article.updated_at)})` : ""}
