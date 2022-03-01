@@ -10,6 +10,8 @@ import Footer from "../components/layout/footer/Footer";
 import GlobalHead from "../components/layout/GlobalHead";
 import theme from "../theme/theme";
 
+import "../styles/global.css";
+
 import "@fontsource/saira-semi-condensed/100.css";
 import "@fontsource/saira-semi-condensed/200.css";
 import "@fontsource/saira-semi-condensed/300.css";
