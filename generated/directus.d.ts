@@ -343,6 +343,7 @@ export interface components {
       author?: (string | components["schemas"]["ItemsWriters"]) | null;
       heading?: string | null;
       subheading?: string | null;
+      category?: string | null;
     };
     ItemsPartners: {
       id?: string;

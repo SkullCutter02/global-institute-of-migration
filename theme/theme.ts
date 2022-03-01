@@ -41,6 +41,12 @@ const theme = extendTheme({
       fontWeight: 600,
       color: "gray.400",
     },
+    "big-information": {
+      fontFamily: "secondary",
+      fontSize: 18,
+      fontWeight: 600,
+      color: "gray.400",
+    },
   },
   layerStyles: {
     "page-container": {
