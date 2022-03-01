@@ -1,10 +1,10 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { AspectRatio, Box, Image, Link, SimpleGrid } from "@chakra-ui/react";
+import { AspectRatio, Box, Link, SimpleGrid } from "@chakra-ui/react";
 
 import SectionHeading from "../../../components/elements/SectionHeading";
 import getPartners from "../api/getPartners";
-import HOST from "../../../constants/host";
+import ProgressiveImage from "../../../components/elements/ProgressiveImage";
 
 const Partners: React.FC = () => {
   const { data: partners } = useQuery("partners", () => getPartners());
@@ -21,7 +21,7 @@ const Partners: React.FC = () => {
         {partners.map((partner) => (
           <Box key={partner.id} w={"100%"}>
             <AspectRatio maxW={"100%"} ratio={1}>
-              <Image src={`${HOST}/assets/${partner.logo}`} borderRadius={"full"} boxSize={"100%"} />
+              <ProgressiveImage src={partner.logo as string} borderRadius={"full"} boxSize={"100%"} />
             </AspectRatio>
             <Link
               href={partner.website_url}

@@ -1,11 +1,11 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { AspectRatio, Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { AspectRatio, Box, SimpleGrid, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 import SectionHeading from "../../../components/elements/SectionHeading";
 import getWriters from "../api/getWriters";
-import HOST from "../../../constants/host";
+import ProgressiveImage from "../../../components/elements/ProgressiveImage";
 
 const Team: React.FC = () => {
   const { data: writers } = useQuery("writers", () => getWriters());
@@ -22,7 +22,7 @@ const Team: React.FC = () => {
         {writers.map((writer) => (
           <Box key={writer.id} w={"100%"}>
             <AspectRatio maxW={"100%"} ratio={1}>
-              <Image src={`${HOST}/assets/${writer.image}`} borderRadius={"full"} boxSize={"100%"} />
+              <ProgressiveImage src={writer.image as string} borderRadius={"full"} boxSize={"100%"} />
             </AspectRatio>
             <Link href={`/writers/${writer.id}`}>
               <Text

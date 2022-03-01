@@ -1,12 +1,12 @@
 import React from "react";
 import { TypeOf } from "@directus/sdk";
-import { Box, Heading, Image, Text, Flex } from "@chakra-ui/react";
+import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import Link from "next/link";
 
 import { DirectusCollections } from "../../../generated/directus";
-import HOST from "../../../constants/host";
 import formatMediaDate from "../../../utils/formatMediaDate";
 import markdownToPlainText from "../../../utils/markdownToPlainText";
+import ProgressiveImage from "../../../components/elements/ProgressiveImage";
 
 interface Props {
   article: Partial<TypeOf<DirectusCollections, "articles">>;
@@ -23,8 +23,8 @@ const ArticlePreview: React.FC<Props> = ({ article }) => {
         alignItems={"stretch"}
         flexDirection={{ base: "column", md: "row" }}
       >
-        <Image
-          src={`${HOST}/assets/${article.main_article_image}`}
+        <ProgressiveImage
+          src={article.main_article_image as string}
           objectFit={"cover"}
           w={{ base: "100%", md: "35%" }}
         />

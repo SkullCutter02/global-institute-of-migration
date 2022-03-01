@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { TypeOf } from "@directus/sdk";
 import Link from "next/link";
 
 import { DirectusCollections } from "../../../generated/directus";
-import HOST from "../../../constants/host";
 import formatMediaDate from "../../../utils/formatMediaDate";
+import ProgressiveImage from "../../../components/elements/ProgressiveImage";
 
 interface Props {
   video: Partial<TypeOf<DirectusCollections, "videos">>;
@@ -16,10 +16,10 @@ const VideoCard: React.FC<Props> = ({ video, includeYear = false }) => {
   return (
     <>
       <Box w={"100%"}>
-        <Image
+        <ProgressiveImage
           maxH={{ base: null, md: "250px" }}
           objectFit={"cover"}
-          src={`${HOST}/assets/${video.thumbnail}`}
+          src={video.thumbnail}
           w={"100%"}
         />
         <Text my={2} textStyle={"information"}>

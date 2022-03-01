@@ -1,24 +1,26 @@
 import React from "react";
-import { ImageProps } from "next/image";
 import ProgImage from "react-progressive-image";
-import { Image } from "@chakra-ui/react";
+import { Image, ImageProps } from "@chakra-ui/react";
 
 import HOST from "../../constants/host";
 
-interface Props extends Partial<ImageProps> {
-  imageId: string;
+interface Props extends ImageProps {
+  fromMarkdown?: boolean;
 }
 
-const ProgressiveImage: React.FC<Props> = ({ imageId }) => {
+const ProgressiveImage: React.FC<Props> = ({ src, fromMarkdown = false, ...props }) => {
   return (
     <>
-      <ProgImage placeholder={`${HOST}/assets/${imageId}?width=100`} src={`${HOST}/assets/${imageId}`}>
-        {(src: string, loading: boolean) => (
+      <ProgImage
+        placeholder={fromMarkdown ? `${src}?width=50` : `${HOST}/assets/${src}?width=50`}
+        src={fromMarkdown ? src : `${HOST}/assets/${src}`}
+      >
+        {(src: string, isLoading: boolean) => (
           <Image
             src={src}
-            filter={loading ? "blur(10px)" : null}
-            transition={"filter 300ms ease"}
-            w={"100%"}
+            filter={isLoading ? "blur(10px)" : "blur(0px)"}
+            transition={"filter 0.5s linear"}
+            {...props}
           />
         )}
       </ProgImage>

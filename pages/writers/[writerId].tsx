@@ -1,11 +1,11 @@
 import React from "react";
 import { GetServerSideProps } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
-import { AspectRatio, Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { AspectRatio, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 import getWriter from "../../features/about-us/api/getWriter";
-import HOST from "../../constants/host";
+import ProgressiveImage from "../../components/elements/ProgressiveImage";
 
 const WriterPage: React.FC = () => {
   const router = useRouter();
@@ -18,7 +18,7 @@ const WriterPage: React.FC = () => {
       <Flex as={"main"} flexDirection={{ base: "column", sm: "row" }} layerStyle={"page-container"}>
         <Box w={{ base: "85%", sm: "25%" }} margin={{ base: "0 auto", sm: 0 }}>
           <AspectRatio maxW={"100%"} ratio={1}>
-            <Image boxSize={"100%"} borderRadius={"full"} src={`${HOST}/assets/${writer.image}`} />
+            <ProgressiveImage boxSize={"100%"} borderRadius={"full"} src={writer.image as string} />
           </AspectRatio>
         </Box>
         <Box mt={{ base: 12, sm: 0 }} ml={{ base: 0, sm: "8%" }} w={{ base: "100%", sm: "67%" }}>

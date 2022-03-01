@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Heading, Text, Image, Avatar } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Avatar } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
@@ -9,6 +9,7 @@ import HOST from "../../constants/host";
 import formatMediaDateWithTime from "../../utils/formatMediaDateWithTime";
 import ArticleBody from "../../features/articles/components/ArticleBody";
 import ArticleMetaHead from "../../features/articles/components/ArticleMetaHead";
+import ProgressiveImage from "../../components/elements/ProgressiveImage";
 
 const ArticlePage: React.FC = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const ArticlePage: React.FC = () => {
             {article.subheading}
           </Text>
           <Flex mt={10}>
-            <Avatar src={`${HOST}/assets/${article.author.image}`} />
+            <Avatar src={`${HOST}/assets/${article.author.image}?width=100`} />
             <Box ml={5}>
               <Text cursor={"pointer"} fontFamily={"secondary"} fontWeight={600}>
                 {article.author.name}
@@ -39,7 +40,7 @@ const ArticlePage: React.FC = () => {
               </Text>
             </Box>
           </Flex>
-          <Image my={10} src={`${HOST}/assets/${article.main_article_image}`} w={"100%"} />
+          <ProgressiveImage my={10} src={article.main_article_image as string} w={"100%"} />
           <ArticleBody article={article} />
         </Box>
       )}

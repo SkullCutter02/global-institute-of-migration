@@ -3,9 +3,10 @@ import { TypeOf } from "@directus/sdk";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import { Image, OrderedList, Table, UnorderedList, Link, Text } from "@chakra-ui/react";
+import { OrderedList, Table, UnorderedList, Link, Text } from "@chakra-ui/react";
 
 import { DirectusCollections } from "../../../generated/directus";
+import ProgressiveImage from "../../../components/elements/ProgressiveImage";
 
 interface Props {
   article: Partial<TypeOf<DirectusCollections, "articles">>;
@@ -18,9 +19,9 @@ const theme = {
     </Text>
   ),
   img: ({ children, ...props }) => (
-    <Image w={"100%"} my={14} {...props}>
+    <ProgressiveImage fromMarkdown w={"100%"} my={14} {...props}>
       {children}
-    </Image>
+    </ProgressiveImage>
   ),
   table: ({ children, ...props }) => (
     <Table my={7} {...props}>

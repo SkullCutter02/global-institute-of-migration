@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Heading, Image, VStack, Text } from "@chakra-ui/react";
+import { Box, Heading, VStack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 import ArticlePreviewInformation from "./ArticlePreviewInformation";
 import { useQuery } from "react-query";
 import getRecentArticles from "../api/getRecentArticles";
-import HOST from "../../../constants/host";
+import ProgressiveImage from "../../../components/elements/ProgressiveImage";
 
 const RecentArticlesPreview: React.FC = () => {
   const { data: articles } = useQuery("recent-articles", () => getRecentArticles());
@@ -22,7 +22,7 @@ const RecentArticlesPreview: React.FC = () => {
         <Heading fontSize={28}>Recent Articles</Heading>
         {articles.slice(1).map((article) => (
           <Box w={"100%"} key={article.id}>
-            <Image src={`${HOST}/assets/${article.main_article_image}`} w={"100%"} />
+            <ProgressiveImage src={article.main_article_image as string} w={"100%"} />
             <ArticlePreviewInformation article={article} />
             <Link href={`/articles/${article.id}`}>
               <Text as={"h2"} textTransform={"capitalize"} textStyle={"preview-heading"}>

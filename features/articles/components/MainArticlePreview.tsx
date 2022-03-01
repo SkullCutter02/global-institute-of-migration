@@ -20,7 +20,7 @@ const MainArticlePreview: React.FC = () => {
         borderBottom={{ base: "3px solid", md: "none" }}
         borderColor={{ base: "gray.300", md: "gray.300" }}
       >
-        <ProgressiveImage imageId={articles[0].main_article_image as string} />
+        <ProgressiveImage w={"100%"} src={articles[0].main_article_image as string} />
         <ArticlePreviewInformation article={articles[0]} />
         <Link href={`/articles/${articles[0].id}`}>
           <Heading
