@@ -33,7 +33,7 @@ const ProgressiveImage: React.FC<Props> = ({
         {isImageLoading ? (
           <Skeleton ref={imgRef} w={"100%"} h={"100%"} />
         ) : (
-          <Image src={imgSrc} w={"100%"} h={"100%"} />
+          <Image src={imgSrc} alt={imgSrc} w={"100%"} h={"100%"} />
         )}
       </AspectRatio>
     </>
