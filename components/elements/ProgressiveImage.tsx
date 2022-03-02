@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import { Image, ImageProps, AspectRatio, Skeleton } from "@chakra-ui/react";
+import { ImageProps, AspectRatio, Skeleton } from "@chakra-ui/react";
+import Image from "next/image";
 
 import HOST from "../../constants/host";
 import useProgressiveImage from "../../hooks/useProgressiveImage";
@@ -20,21 +21,31 @@ const ProgressiveImage: React.FC<Props> = ({
 }) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
-  const { isInView } = useIntersection(imgRef);
+  // const { isInView } = useIntersection(imgRef);
 
-  const { src: imgSrc, isImageLoading } = useProgressiveImage(
-    fromMarkdown ? src : `${HOST}/assets/${src}?format=webp`,
-    isInView
-  );
+  // const { src: imgSrc, isImageLoading } = useProgressiveImage(
+  //   fromMarkdown ? src : `${HOST}/assets/${src}?format=webp`,
+  //   isInView
+  // );
 
   return (
     <>
       <AspectRatio {...props} ratio={aspectRatio} maxW={props.w}>
-        {isImageLoading ? (
-          <Skeleton ref={imgRef} w={"100%"} h={"100%"} />
-        ) : (
-          <Image src={imgSrc} alt={imgSrc} w={"100%"} h={"100%"} />
-        )}
+        {/*{isImageLoading ? (*/}
+        {/*  <Skeleton ref={imgRef} w={"100%"} h={"100%"} />*/}
+        {/*) : (*/}
+        <Image
+          src={fromMarkdown ? `${src}?format=webp` : `${HOST}/assets/${src}?format=webp`}
+          placeholder={"blur"}
+          blurDataURL={
+            fromMarkdown
+              ? `${src}?format=webp&width=30&quality=1`
+              : `${HOST}/assets/${src}?format=webp&width=30&quality=1`
+          }
+          layout={"fill"}
+          objectFit={"cover"}
+        />
+        {/*)}*/}
       </AspectRatio>
     </>
   );
