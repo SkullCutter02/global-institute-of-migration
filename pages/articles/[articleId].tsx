@@ -4,13 +4,15 @@ import { GetServerSideProps } from "next";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 import getArticle from "../../features/articles/api/getArticle";
 import HOST from "../../constants/host";
 import formatMediaDateWithTime from "../../utils/formatMediaDateWithTime";
-import ArticleBody from "../../features/articles/components/ArticleBody";
 import ArticleMetaHead from "../../features/articles/components/ArticleMetaHead";
 import ProgressiveImage from "../../components/elements/ProgressiveImage";
+
+const ArticleBody = dynamic(() => import("../../features/articles/components/ArticleBody"));
 
 const ArticlePage: React.FC = () => {
   const router = useRouter();
