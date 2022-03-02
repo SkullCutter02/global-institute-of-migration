@@ -23,11 +23,7 @@ const ProgressiveImage: React.FC<Props> = ({
         <Image
           src={fromMarkdown ? `${src}?format=webp` : `${HOST}/assets/${src}?format=webp`}
           placeholder={"blur"}
-          blurDataURL={
-            fromMarkdown
-              ? `${src}?format=webp&width=30&quality=1`
-              : `${HOST}/assets/${src}?format=webp&width=30&quality=1`
-          }
+          blurDataURL={"/bg.png"}
           layout={"fill"}
           objectFit={"cover"}
         />
