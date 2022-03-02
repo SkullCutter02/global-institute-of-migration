@@ -23,7 +23,7 @@ const ProgressiveImage: React.FC<Props> = ({
   const { isInView } = useIntersection(imgRef);
 
   const { src: imgSrc, isImageLoading } = useProgressiveImage(
-    fromMarkdown ? src : `${HOST}/assets/${src}`,
+    fromMarkdown ? src : `${HOST}/assets/${src}?format=webp`,
     isInView
   );
 
