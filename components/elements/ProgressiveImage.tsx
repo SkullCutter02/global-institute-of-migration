@@ -1,10 +1,8 @@
 import React, { useRef } from "react";
-import { ImageProps, AspectRatio, Skeleton } from "@chakra-ui/react";
+import { ImageProps, AspectRatio } from "@chakra-ui/react";
 import Image from "next/image";
 
 import HOST from "../../constants/host";
-import useProgressiveImage from "../../hooks/useProgressiveImage";
-import useIntersection from "../../hooks/useIntersection";
 
 interface Props extends ImageProps {
   fromMarkdown?: boolean;
@@ -19,21 +17,9 @@ const ProgressiveImage: React.FC<Props> = ({
   isCircle = false,
   ...props
 }) => {
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  // const { isInView } = useIntersection(imgRef);
-
-  // const { src: imgSrc, isImageLoading } = useProgressiveImage(
-  //   fromMarkdown ? src : `${HOST}/assets/${src}?format=webp`,
-  //   isInView
-  // );
-
   return (
     <>
       <AspectRatio {...props} ratio={aspectRatio} maxW={props.w}>
-        {/*{isImageLoading ? (*/}
-        {/*  <Skeleton ref={imgRef} w={"100%"} h={"100%"} />*/}
-        {/*) : (*/}
         <Image
           src={fromMarkdown ? `${src}?format=webp` : `${HOST}/assets/${src}?format=webp`}
           placeholder={"blur"}
@@ -45,7 +31,6 @@ const ProgressiveImage: React.FC<Props> = ({
           layout={"fill"}
           objectFit={"cover"}
         />
-        {/*)}*/}
       </AspectRatio>
     </>
   );
