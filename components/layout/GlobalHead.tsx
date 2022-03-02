@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import HOST from "../../constants/host";
 
 const SITE_NAME = "The World Forum For Refugees And Migrants";
 const SITE_DESCRIPTION = "We spread awarenss about migration issues globally.";
@@ -13,6 +14,8 @@ const GlobalHead: React.FC = () => {
         <link rel="canonical" href={process.env.NEXT_PUBLIC_URL} key={"canonical"} />
         <meta name={"description"} content={SITE_DESCRIPTION} key={"description"} />
         <meta name={"robots"} content={"index, follow"} key={"robots"} />
+        <link rel="preconnect" href={HOST} />
+        <link rel="dns-prefetch" href={HOST} />
 
         <meta property={"og:site_name"} content={SITE_NAME} key={"og:site_name"} />
         <meta property={"og:title"} content={SITE_NAME} key={"og:title"} />

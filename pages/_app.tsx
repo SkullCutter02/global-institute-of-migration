@@ -2,7 +2,6 @@ import type { AppProps } from "next/app";
 import { useState } from "react";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import Head from "next/head";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 
 import Navbar from "../components/layout/navbar/Navbar";
