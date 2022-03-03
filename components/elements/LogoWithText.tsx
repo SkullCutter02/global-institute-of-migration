@@ -12,7 +12,7 @@ const LogoWithText: React.FC = () => {
         <Flex alignItems={"center"} cursor={"pointer"}>
           <Image src={logo} layout={"fixed"} />
           <Text fontWeight={"bold"} color={"white"} ml={4} fontSize={23}>
-            WFRM
+            WFMR
           </Text>
         </Flex>
       </Link>

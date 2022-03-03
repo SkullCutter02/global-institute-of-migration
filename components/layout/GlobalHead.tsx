@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import HOST from "../../constants/host";
 
-const SITE_NAME = "The World Forum For Refugees And Migrants";
+const SITE_NAME = "The World Forum For Migrants and Refugees";
 const SITE_DESCRIPTION = "We spread awarenss about migration issues globally.";
 
 const GlobalHead: React.FC = () => {
