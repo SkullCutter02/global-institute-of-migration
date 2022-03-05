@@ -371,6 +371,8 @@ export interface components {
       image?: (string | components["schemas"]["Files"]) | null;
       role?: string | null;
       importance?: number | null;
+      isFounder?: boolean | null;
+      department?: string | null;
     };
     Activity: {
       /** Unique identifier for the object. */
