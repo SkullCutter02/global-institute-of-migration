@@ -3,7 +3,8 @@ import Head from "next/head";
 import HOST from "../../constants/host";
 
 const SITE_NAME = "The World Forum For Migrants and Refugees";
-const SITE_DESCRIPTION = "We spread awarenss about migration issues globally.";
+const SITE_DESCRIPTION =
+  "To engage the youth in Hong Kong and abroad with the most cultivating problems of migration for intellectual empowerment and innovation.";
 
 const GlobalHead: React.FC = () => {
   return (
