@@ -7,8 +7,8 @@ const OurMission: React.FC = () => {
     <>
       <SectionHeading heading={"OUR MISSION"} />
       <Text my={8} lineHeight={1.9}>
-        our mission is to engage the youth in Hong Kong and abroad with the most cultivating problems of
-        migration for intellectual empowerment and innovation
+        Our mission is to engage the youth in Hong Kong and abroad with the most cultivating problems of
+        migration for intellectual empowerment and innovation.
       </Text>
     </>
   );
