@@ -21,7 +21,7 @@ const Team: React.FC = () => {
         textAlign={"center"}
         textTransform={"uppercase"}
       >
-        Founder
+        Management
       </Heading>
       <TeamGrid>
         {writers
